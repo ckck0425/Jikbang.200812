@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
         mRoomList.add(Room(10000,"서울시 영등포구", 2, "영등포구의 2층 방 입니다."))
         mRoomList.add(Room(11000,"서울시 영등포구", 7, "영등포구의 7층 방 입니다."))
         mRoomList.add(Room(9000,"서울시 동대문구", 0, "동대문구의 반지하 방 입니다."))
-        mRoomList.add(Room(12000,"서울시 동대문구", 10, "동대문구의 10층 방 입니다."))
+        mRoomList.add(Room(112000,"서울시 동대문구", 10, "동대문구의 10층 방 입니다."))
         mRoomList.add(Room(8400,"서울시 동대문구", 1, "동대문구의 1층 방 입니다."))
         mRoomList.add(Room(9800,"서울시 동대문구", 4, "동대문구의 4층 방 입니다."))
 
