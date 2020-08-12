@@ -2,12 +2,15 @@ package kr.co.tjoeun.jikbang200812
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import kr.co.tjoeun.jikbang200812.Adapters.RoomAdapter
 import kr.co.tjoeun.jikbang200812.datas.Room
 
 class MainActivity : BaseActivity() {
 
     val mRoomList = ArrayList<Room>()
 
+    lateinit var mRoomAdapter: RoomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,10 +19,12 @@ class MainActivity : BaseActivity() {
         setValues()
     }
 
+    override fun setupEvents() {}
+//            메인화면의 이벤트 관련 코드 모아둘 장소
 
-    override fun setupEvents() {
+    override fun setValues() {
 
-//        메인화면의 이벤트 관련 코드 모아둘 장소
+//        메인화면의 값 출력 관련 코드 모아둘 장소
 //        방목록을 강제로 추가하는 코드
 
         mRoomList.add(Room(8500,"서울시 은평구", 5, "은평구의 5층 방 입니다."))
@@ -33,13 +38,8 @@ class MainActivity : BaseActivity() {
         mRoomList.add(Room(8400,"서울시 동대문구", 1, "동대문구의 1층 방 입니다."))
         mRoomList.add(Room(9800,"서울시 동대문구", 4, "동대문구의 4층 방 입니다."))
 
+        mRoomAdapter = RoomAdapter(mContext, R.layout.room_list_item, mRoomList)
+        roomListView.adapter = mRoomAdapter
     }
-
-    override fun setValues() {
-
-//        메인화면의 값 출력 관련 코드 모아둘 장소
-    }
-
-
 
 }
