@@ -24,6 +24,7 @@
             android:paddingLeft="15dp">
 
             <TextView
+                android:id="@+id/priceTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8,000 (예시가격)"
@@ -32,6 +33,7 @@
                 android:textColor="#ffa509"/>
 
             <TextView
+                android:id="@+id/addTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="마포구 서교동, 1층 (예시)"
