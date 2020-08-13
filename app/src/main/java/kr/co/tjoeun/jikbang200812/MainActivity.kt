@@ -11,12 +11,16 @@ import kr.co.tjoeun.jikbang200812.datas.Room
 class MainActivity : BaseActivity() {
 
     val mRoomList = ArrayList<Room>()
+//    lateinit var : 변수는 미리 만들지만, 객체 대입 (초기화)은 나중에 하겟다.
+//    리스트뷰에 실제 xml + 데이터객체 조합 => 뿌려주는 역할 : Adapter
 
     lateinit var mRoomAdapter: RoomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//         두개의 함수에 적힌 코드는 반드시 onCreate내부에서 실행 시켜줘야 => 실제로 동작함.
         setupEvents()
         setValues()
     }
