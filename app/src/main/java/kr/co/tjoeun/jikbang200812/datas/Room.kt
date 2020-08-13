@@ -13,16 +13,9 @@ class Room(
 
     fun getFormattedFloor() : String {
         val floorstr : String
-        if (this.floor >= 1 ) {
-            floorstr = "${this.floor}층"
-        }
-        else if (this.floor < 0) {
-            floorstr = "지하 ${-this.floor}층"
-        }
-        else {
-            floorstr = "반지하"
-
-        }
+        if (this.floor >= 1 ) { floorstr = "${this.floor}층" }
+        else if (this.floor < 0) { floorstr = "지하 ${-this.floor}층" }
+        else { floorstr = "반지하" }
 
     }
 
@@ -36,12 +29,10 @@ class Room(
 
             val thousandStr = NumberFormat.getNumberInstance().format(thousand)
 
-            return "${hm}djr ${thousandStr}"
-
+            return "${hm}억 ${thousandStr}"
         }
         else {
             return NumberFormat.getNumberInstance().format(this.price)
         }
     }
 }
-
