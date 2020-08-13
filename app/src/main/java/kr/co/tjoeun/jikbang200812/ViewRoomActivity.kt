@@ -2,7 +2,9 @@ package kr.co.tjoeun.jikbang200812
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_view_room.*
 import kotlinx.android.synthetic.main.room_list_item.*
+import kotlinx.android.synthetic.main.room_list_item.priceTxt
 import kr.co.tjoeun.jikbang200812.datas.Room
 
 class ViewRoomActivity : BaseActivity() {
@@ -25,8 +27,7 @@ class ViewRoomActivity : BaseActivity() {
         addTxt.text = room.address
         priceTxt.text = room.getFormattedPrice()
         descTxt.text = room.description
-
-
+        floor.text = room.getFormattedFloor()
 
     }
 
