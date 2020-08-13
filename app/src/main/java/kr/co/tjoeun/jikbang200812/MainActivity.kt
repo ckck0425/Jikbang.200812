@@ -30,7 +30,7 @@ class MainActivity : BaseActivity() {
 //            메인화면의 이벤트 관련 코드 모아둘 장소
 
         roomListView.setOnItemClickListener { adapterview, view, position, id ->
-            val clickedRoom = mRoomList[i]
+            val clickedRoom = mRoomList[position]
             val myIntent = Intent(mContext, ViewRoomActivity::class.java)
             myIntent.putExtra("roomInfo", clickedRoom)
             startActivity(myIntent)

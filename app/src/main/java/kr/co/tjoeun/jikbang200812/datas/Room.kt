@@ -21,8 +21,9 @@ class Room(
         }
         else {
             floorstr = "반지하"
-
         }
+
+        return floorstr
 
     }
 
