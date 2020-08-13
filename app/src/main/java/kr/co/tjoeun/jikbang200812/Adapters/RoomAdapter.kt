@@ -34,22 +34,7 @@ class RoomAdapter(
 
         val data = mList[position]
 
-        descTxt.text = data.description
-        if (data.price >= 10000) {
-
-//            / -> 나누기 하고 소숫점 뒤에 버림
-//            % -> 나누기 하고 소숫점 뒷자리 나타내줌???
-
-            val hm = data.price / 10000
-            val th = data.price % 10000
-            priceTxt.text = "${hm}억${NumberFormat.getNumberInstance(Locale.KOREA).format(th)
-            }"
-
-        }
-        else {
-            priceTxt.text = NumberFormat.getNumberInstance(Locale.KOREA).format(data.price)
-        }
-
+        descTxt.text = data.getFormattedPrice()
 
 //        층수 >= 1 : 2층, 5층 등
 //        층수 == 0 : 반지하
