@@ -38,7 +38,7 @@ class RoomAdapter(
         if (data.price >= 10000) {
 
 //            / -> 나누기 하고 소숫점 뒤에 버림
-//            % -> 나누기 하고 소숫점 뒷자리
+//            % -> 나누기 하고 소숫점 뒷자리 나타내줌???
 
             val hm = data.price / 10000
             val th = data.price % 10000
@@ -50,7 +50,25 @@ class RoomAdapter(
             priceTxt.text = NumberFormat.getNumberInstance(Locale.KOREA).format(data.price)
         }
 
-        addTxt.text = data.address
+
+//        층수 >= 1 : 2층, 5층 등
+//        층수 == 0 : 반지하
+//        그외 : 지하 2층, 지하 1층 등
+//           ㄴ>>  그냥 하면 지하 -1층으로  나오니까 앞에 - 붙여서 + 만들어줌
+
+        var floorStr : String
+        if(data.floor >= 1 ){
+            floorStr = "${data.floor}층"
+        }
+        else if (data.floor == 0){
+            floorStr = "반지하"
+        }
+        else {
+            floorStr = "지하 ${-data.floor}층"
+        }
+
+        addTxt.text = "${data.address}, ${floorStr}"
+
 
         return row
 
