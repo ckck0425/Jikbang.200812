@@ -37,7 +37,7 @@ class Room(
 
             val thousandStr = NumberFormat.getNumberInstance().format(thousand)
 
-            return "${hm}djr ${thousandStr}"
+            return "${hm}억 ${thousandStr}"
 
         }
         else {
